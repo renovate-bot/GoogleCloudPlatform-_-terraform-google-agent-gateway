@@ -23,7 +23,7 @@ terraform {
     }
   }
 
-  provider_meta "google" {
+  provider_meta "google-beta" {
     module_name = "blueprints/terraform/agent-gateway/v0.0.1"
   }
 }

@@ -14,8 +14,43 @@
  * limitations under the License.
  */
 
-resource "google_storage_bucket" "main" {
-  project  = var.project_id
-  name     = var.bucket_name
-  location = "US"
+resource "google_network_services_agent_gateway" "main" {
+  provider = google-beta
+
+  project     = var.project_id
+  location    = var.location
+  name        = var.gateway_name
+  description = var.description
+  labels      = var.labels
+  protocols   = var.protocols
+  registries  = var.registries
+
+  dynamic "google_managed" {
+    for_each = var.google_managed_governed_access_path != null ? [var.google_managed_governed_access_path] : []
+    content {
+      governed_access_path = var.google_managed_governed_access_path
+    }
+  }
+
+  dynamic "self_managed" {
+    for_each = var.self_managed_resource_uri != null ? [var.self_managed_resource_uri] : []
+    content {
+      resource_uri = var.self_managed_resource_uri
+    }
+  }
+
+  dynamic "network_config" {
+    for_each = var.network_config_egress_network_attachment != null ? [var.google_managed_governed_access_path] : []
+    content {
+      egress {
+        network_attachment = var.network_config_egress_network_attachment
+      }
+    }
+  }
+
+  timeouts {
+    create = var.timeout_create
+    update = var.timeout_update
+    delete = var.timeout_delete
+  }
 }
