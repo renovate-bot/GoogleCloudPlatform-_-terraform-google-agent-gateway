@@ -15,11 +15,16 @@
  */
 
 terraform {
-  required_version = ">= 1.3, < 1.6"
+  required_version = ">= 1.3"
+
   required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = ">= 7.20.0" # Updated to support the Agent Gateway release
+    }
     google-beta = {
       source  = "hashicorp/google-beta"
-      version = ">= 3.53, < 7"
+      version = ">= 7.20.0" # Updated to support the Agent Gateway release
     }
   }
 
