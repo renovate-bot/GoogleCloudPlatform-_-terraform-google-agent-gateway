@@ -24,7 +24,7 @@ spec:
     source:
       repo: https://github.com/Daisyprakash/agent-gateway.git
       sourceType: git
-    version: 0.0.1
+    version: 0.0.2
     actuationTool:
       flavor: Terraform
       version: ">= 1.3"
@@ -50,7 +50,7 @@ spec:
         varType: map(string)
         defaultValue: {}
       - name: registries
-        description: "A list of Agent registries. Format: //agentregistry.googleapis.com/{version}/projects/{{project}}/locations/{{location}}"
+        description: "A list of Agent registries. Format: //agentregistry.googleapis.com/{version}/projects/{project}/locations/{location}"
         varType: list(string)
         defaultValue: []
       - name: description
@@ -63,7 +63,7 @@ spec:
         description: A supported Google Cloud networking proxy URI in the Project and Location when using Self Managed deployment. Conflicts with google_managed_governed_access_path.
         varType: string
       - name: network_config_egress_network_attachment
-        description: "The URI of the Network Attachment resource for egress in network_config. Format: projects/{{project}}/regions/{{region}}/networkAttachments/{{name}}"
+        description: "The URI of the Network Attachment resource for egress in network_config. Format: projects/{project}/regions/{region}/networkAttachments/{name}"
         varType: string
       - name: timeout_create
         description: Timeout for creation.
@@ -99,6 +99,8 @@ spec:
         roles:
           - roles/owner
     services:
+      - networkservices.googleapis.com
+      - agentregistry.googleapis.com
       - cloudresourcemanager.googleapis.com
       - storage-api.googleapis.com
       - serviceusage.googleapis.com

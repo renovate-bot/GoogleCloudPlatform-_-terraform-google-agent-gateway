@@ -35,7 +35,7 @@ variable "labels" {
 }
 
 variable "registries" {
-  description = "A list of Agent registries. Format: //agentregistry.googleapis.com/{version}/projects/{{project}}/locations/{{location}}"
+  description = "A list of Agent registries. Format: //agentregistry.googleapis.com/{version}/projects/{project}/locations/{location}"
   type        = list(string)
   default     = []
 }
@@ -59,7 +59,7 @@ variable "self_managed_resource_uri" {
 }
 
 variable "network_config_egress_network_attachment" {
-  description = "The URI of the Network Attachment resource for egress in network_config. Format: projects/{{project}}/regions/{{region}}/networkAttachments/{{name}}"
+  description = "The URI of the Network Attachment resource for egress in network_config. Format: projects/{project}/regions/{region}/networkAttachments/{name}"
   type        = string
   default     = null
 }

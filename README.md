@@ -40,10 +40,10 @@ output "gateway_id" {
 | google\_managed\_governed\_access\_path | Operating Mode of Agent Gateway when using Google Managed deployment. Conflicts with self\_managed\_resource\_uri. Possible values: AGENT\_TO\_ANYWHERE, CLIENT\_TO\_AGENT. | `string` | `null` | no |
 | labels | A map of key/value labels to apply. | `map(string)` | `{}` | no |
 | location | The location of the Agent Gateway | `string` | n/a | yes |
-| network\_config\_egress\_network\_attachment | The URI of the Network Attachment resource for egress in network\_config. Format: projects/{{project}}/regions/{{region}}/networkAttachments/{{name}} | `string` | `null` | no |
+| network\_config\_egress\_network\_attachment | The URI of the Network Attachment resource for egress in network\_config. Format: projects/{project}/regions/{region}/networkAttachments/{name} | `string` | `null` | no |
 | project\_id | The GCP project ID where the Agent Gateway will be created. | `string` | n/a | yes |
 | protocols | List of protocols (e.g., ['MCP']). | `list(string)` | <pre>[<br>  "MCP"<br>]</pre> | no |
-| registries | A list of Agent registries. Format: //agentregistry.googleapis.com/{version}/projects/{{project}}/locations/{{location}} | `list(string)` | `[]` | no |
+| registries | A list of Agent registries. Format: //agentregistry.googleapis.com/{version}/projects/{project}/locations/{location} | `list(string)` | `[]` | no |
 | self\_managed\_resource\_uri | A supported Google Cloud networking proxy URI in the Project and Location when using Self Managed deployment. Conflicts with google\_managed\_governed\_access\_path. | `string` | `null` | no |
 | timeout\_create | Timeout for creation. | `string` | `"30m"` | no |
 | timeout\_delete | Timeout for deletion. | `string` | `"30m"` | no |

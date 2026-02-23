@@ -40,7 +40,7 @@ resource "google_network_services_agent_gateway" "main" {
   }
 
   dynamic "network_config" {
-    for_each = var.network_config_egress_network_attachment != null ? [var.google_managed_governed_access_path] : []
+    for_each = var.network_config_egress_network_attachment != null ? [var.network_config_egress_network_attachment] : []
     content {
       egress {
         network_attachment = var.network_config_egress_network_attachment

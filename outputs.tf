@@ -20,17 +20,17 @@ output "agent_gateway_id" {
 
 output "mtls_endpoint" {
   description = "The mTLS Endpoint associated with this Agent Gateway for agent connections."
-  value       = google_network_services_agent_gateway.main.agent_gateway_card[0].mtls_endpoint
+  value       = one(google_network_services_agent_gateway.main.agent_gateway_card[*].mtls_endpoint)
 }
 
 output "root_certificates" {
   description = "Root Certificates for Agents to validate this AgentGateway."
-  value       = google_network_services_agent_gateway.main.agent_gateway_card[0].root_certificates
+  value       = one(google_network_services_agent_gateway.main.agent_gateway_card[*].root_certificates)
 }
 
 output "service_extensions_account" {
   description = "Service Account used by Service Extensions to operate."
-  value       = google_network_services_agent_gateway.main.agent_gateway_card[0].service_extensions_service_account
+  value       = one(google_network_services_agent_gateway.main.agent_gateway_card[*].service_extensions_service_account)
 }
 
 output "effective_labels" {
