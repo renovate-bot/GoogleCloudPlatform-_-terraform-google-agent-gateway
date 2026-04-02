@@ -121,3 +121,5 @@ spec:
         version: ">= 7.20.0"
       - source: hashicorp/google-beta
         version: ">= 7.20.0"
+      - source: hashicorp/google-nightly
+        version: ">= 0.0.0"
