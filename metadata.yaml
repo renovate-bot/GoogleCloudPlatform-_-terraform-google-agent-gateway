@@ -113,9 +113,9 @@ spec:
           - roles/iam.serviceAccountUser
           - roles/compute.networkAdmin
     services:
-      - name: networkservices.googleapis.com
-      - name: compute.googleapis.com
-      - name: networksecurity.googleapis.com
+      - networkservices.googleapis.com
+      - compute.googleapis.com
+      - networksecurity.googleapis.com
     providerVersions:
       - source: hashicorp/google
         version: ">= 7.20.0"
