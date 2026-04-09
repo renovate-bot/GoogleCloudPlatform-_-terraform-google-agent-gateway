@@ -77,5 +77,7 @@ spec:
       outputs:
         agent_gateway_id:
           visibility: VISIBILITY_ROOT
+        google_managed_gateway_type:
+          visibility: VISIBILITY_ROOT
         mtls_endpoint:
           visibility: VISIBILITY_ROOT

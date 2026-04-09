@@ -55,6 +55,7 @@ output "gateway_id" {
 |------|-------------|
 | agent\_gateway\_id | The full resource ID of the Agent Gateway. |
 | effective\_labels | All labels including those inherited from the provider. |
+| google\_managed\_gateway\_type | The gateway type (operating mode) in case of a Google Managed gateway. |
 | mtls\_endpoint | The mTLS Endpoint associated with this Agent Gateway for agent connections. |
 | root\_certificates | Root Certificates for Agents to validate this AgentGateway. |
 | service\_extensions\_account | Service Account used by Service Extensions to operate. |

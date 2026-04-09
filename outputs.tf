@@ -37,3 +37,8 @@ output "effective_labels" {
   description = "All labels including those inherited from the provider."
   value       = google_network_services_agent_gateway.main.effective_labels
 }
+
+output "google_managed_gateway_type" {
+  description = "The gateway type (operating mode) in case of a Google Managed gateway."
+  value       = var.google_managed_governed_access_path != null ? var.google_managed_governed_access_path : null
+}
