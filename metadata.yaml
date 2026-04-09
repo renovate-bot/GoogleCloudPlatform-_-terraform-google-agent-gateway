@@ -94,6 +94,8 @@ spec:
         type:
           - map
           - string
+      - name: google_managed_gateway_type
+        description: The gateway type (operating mode) in case of a Google Managed gateway.
       - name: mtls_endpoint
         description: The mTLS Endpoint associated with this Agent Gateway for agent connections.
         type: string
