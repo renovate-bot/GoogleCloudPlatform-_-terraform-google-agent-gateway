@@ -8,6 +8,17 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 This changelog is generated automatically based on [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
+## [0.5.0](https://github.com/GoogleCloudPlatform/terraform-google-agent-gateway/compare/v0.4.3...v0.5.0) (2026-06-08)
+
+
+### ⚠ BREAKING CHANGES
+
+* Adding string variable support for clh agw
+
+### Features
+
+* Adding string variable support for clh agw ([d39b22c](https://github.com/GoogleCloudPlatform/terraform-google-agent-gateway/commit/d39b22c7ae1c55635dfab00c44d96d58645aff5a))
+
 ## [0.4.3](https://github.com/GoogleCloudPlatform/terraform-google-agent-gateway/compare/v0.4.2...v0.4.3) (2026-05-09)
 
 
