@@ -27,6 +27,9 @@ spec:
   ui:
     input:
       variables:
+        agent_gateway_p4sa:
+          name: agent_gateway_p4sa
+          title: Agent Gateway P4sa
         description:
           name: description
           title: Description
@@ -46,6 +49,9 @@ spec:
         labels:
           name: labels
           title: Labels
+        labels_str:
+          name: labels_str
+          title: Labels Str
         location:
           name: location
           title: Location

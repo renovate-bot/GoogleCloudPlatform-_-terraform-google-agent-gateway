@@ -40,4 +40,6 @@ module "agent_gateway" {
     environment = "test"
     managed-by  = "terraform"
   }
+
+  labels_str = "{\"env\":\"test\",\"team\":\"agent-cloud\",\"managed_by\":\"clh\"}"
 }

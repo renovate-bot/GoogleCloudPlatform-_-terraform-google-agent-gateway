@@ -49,9 +49,13 @@ spec:
         varType: string
         required: true
       - name: labels
-        description: A map of key/value labels to apply.
+        description: Set of label tags associated with the AgentGateway resource. Native map format.
         varType: map(string)
         defaultValue: {}
+      - name: labels_str
+        description: Set of label tags associated with the AgentGateway resource. JSON encoded string format for legacy/CLH support.
+        varType: string
+        defaultValue: ""
       - name: registries
         description: "A list of Agent registries. Format: //agentregistry.googleapis.com/{version}/projects/{project}/locations/{location}"
         varType: list(string)
@@ -83,8 +87,10 @@ spec:
       - name: protocols
         description: List of protocols (e.g., ['MCP']).
         varType: list(string)
-        defaultValue:
-          - MCP
+        defaultValue: []
+      - name: agent_gateway_p4sa
+        description: The Agent Gateway P4SA in the consumer project.
+        varType: string
     outputs:
       - name: agent_gateway_id
         description: The full resource ID of the Agent Gateway.
